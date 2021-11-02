@@ -1,0 +1,33 @@
+.flex-container{
+    display: flex;
+    background-color: blanchedalmond;
+    padding: 10px;
+    justify-content: space-around;
+    align-items: baseline;
+}
+.flex-container div{
+    background-color: coral;
+    width: 100px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 20px;
+    border: cornflowerblue 2px solid;
+}
+
+.flex-containerNotas{
+    display: flex;
+    background-color: blanchedalmond;
+    padding: 10px;
+    justify-content: space-around;
+    align-items: baseline;
+}
+.flex-containerNotas div{
+    background-color: coral;
+    width: 100px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 20px;
+    border: cornflowerblue 2px solid;
+}
