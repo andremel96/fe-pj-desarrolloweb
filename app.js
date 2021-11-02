@@ -3,12 +3,18 @@ const app=express();
 const fileUpload= require("express-fileupload");
 const cors = require("cors");
 
+const path = require("path");
+
 app.use(fileUpload());
 app.use(cors());
 app.use(express.json());
+const PORT=process.env.PORT || 3000;
 
-app.get("/",(req, res)=>{
-    res.send("hello");
+console.log(path.join(__dirname, '/', 'public'))
+app.use(express.static(path.join(__dirname, '/', 'public')));
+
+app.get('/', function(req, res){
+    res.sendFile('public/login.html',{root: __dirname});
 });
 
 app.get("/upload",(req, res)=>{
@@ -16,6 +22,6 @@ app.get("/upload",(req, res)=>{
    res.send(`archivo ${req.files.file.name} subio correctamente al servidor`);
 });
 
-app.listen(3000, ()=>{
-    console.log("puerto 3000");
+app.listen(PORT, ()=>{
+    console.log("Servidor inciado en el puerto: "+PORT);
 });
