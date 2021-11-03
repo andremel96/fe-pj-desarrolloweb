@@ -12,42 +12,35 @@ const generateRequest =(value, path, requestType) => {
     }
 }
 
-const getUsers = () => {
-    const users = document.getElementById("UsersGet");
-    let usersGet = iduserNumero.value;
-    if(usersGet){
-        generateRequest(
-            {value: usersGet},
-            'getAllUsers',
-            'GET')
-            .then((res) => res.json())
-            .then((data) => {
-                generateTable(data)
-            });
-    }else {
-        alert('No hay ususarios ingresados')
-    }
-}
-// const cargarUsers = () => {
-//     fetch(
-//         user_list 
-//     )
-//       .then((res) => res.json())
-//       .then((data) => {
-//         main.innerHTML = "";
-//         data.genres.forEach((item) => {
-//         generateTable(item.id_UserName, item.iduserNumero, 
-//             item.user_name, itenm.name, item.last_name);
-//         });
-//       });
-//   }
-  
-
-// const generateTable = (data) => {
-//     const table = document.getElementById("users");
-//     table.innerHTML = "";
-
+// const getUsers = () => {
+//     const users = document.getElementById("UsersGet");
+//     let usersGet = users.value;
+//     if(usersGet){
+//         generateRequest(
+//             {value: usersGet},
+//             'getAllUsers',
+//             'POST')
+//             .then((res) => res.json())
+//             .then((data) => {
+//                 generateTable(data)
+//             });
+//     }else {
+//         alert('No hay ususarios ingresados')
+//     }
 // }
+const cargarUsers = () => {
+    fetch(
+        user_list 
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        main.innerHTML = "";
+        data.genres.forEach((item) => {
+        generateTable(item.id_UserName, item.iduserNumero, 
+            item.user_name, item.name, item.last_name);
+        });
+      });
+  }
 
 const generateTable = (data) => {
     const table = document.getElementById("UsersList");
