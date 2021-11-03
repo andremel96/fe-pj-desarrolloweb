@@ -79,21 +79,8 @@ body{
   }
 
   .box {
-    --padding: 1rem;
-    position: relative;
-    max-width: 300px;
-    max-height: 200px;
-    overflow-y: auto;
-    scrollbar-gutter: var(--gutter, auto);
-    margin: 1rem auto 0;
-    background: linear-gradient(
-      to right,
-      #fff calc(100% - 15px),
-      #d98daf 0,
-      #d98daf 15px
-    );
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
-    border-radius: 6px;
-    padding: var(--padding);
+    width: 8px;     /* Tamaño del scroll en vertical */
+    height: 8px;    /* Tamaño del scroll en horizontal */
+    display: none;  /* Ocultar scroll */
   }
 
