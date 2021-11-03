@@ -54,7 +54,7 @@ const cargarCurso = () => {
             const table = document.getElementById("CursoList");
             table.innerHTML = "";
             data.user.forEach((item) => {
-                generateTable(item, table);
+                generateTableCurso(item, table);
             });
         });
 }
