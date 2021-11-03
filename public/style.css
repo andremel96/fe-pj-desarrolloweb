@@ -5,6 +5,7 @@ body{
   background: linear-gradient(120deg,#2980b9, #8e44ad);
   height: 100vh;
   overflow: hidden;
+  display: none;
 }
 .flex-container{
     display: flex;
@@ -78,9 +79,4 @@ body{
     font-weight: bold;
   }
 
-  .box {
-    width: 8px;     /* Tamaño del scroll en vertical */
-    height: 8px;    /* Tamaño del scroll en horizontal */
-    display: none;  /* Ocultar scroll */
-  }
-
+  
