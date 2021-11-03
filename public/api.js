@@ -12,22 +12,6 @@ const generateRequest = (value, path, requestType) => {
     }
 }
 
-// const getUsers = () => {
-//     const users = document.getElementById("UsersGet");
-//     let usersGet = users.value;
-//     if(usersGet){
-//         generateRequest(
-//             {value: usersGet},
-//             'getAllUsers',
-//             'POST')
-//             .then((res) => res.json())
-//             .then((data) => {
-//                 generateTable(data)
-//             });
-//     }else {
-//         alert('No hay ususarios ingresados')
-//     }
-// }
 const cargarUsers = () => {
     fetch(
         user_list
