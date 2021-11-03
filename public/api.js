@@ -1,5 +1,6 @@
 const url = 'https://be-pj-desarrolloweb.herokuapp.com'
 let user_list = 'https://be-pj-desarrolloweb.herokuapp.com/users/'
+let curso_list = 'https://be-pj-desarrolloweb.herokuapp.com/curso/'
 
 const generateRequest = (value, path, requestType) => {
     return fethc(url + path), {
@@ -45,7 +46,7 @@ const generateTable = (e, table) => {
 
 const cargarCurso = () => {
     fetch(
-        user_list
+        curso_list
     )
         .then((res) => res.json())
         .then((data) => {
@@ -53,7 +54,7 @@ const cargarCurso = () => {
             console.log(data);
             const table = document.getElementById("CursoList");
             table.innerHTML = "";
-            data.user.forEach((item) => {
+            data.curso.forEach((item) => {
                 generateTableCurso(item, table);
             });
         });
