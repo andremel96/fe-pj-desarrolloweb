@@ -111,7 +111,7 @@ const cargarHomework = () => {
             const table = document.getElementById("HomeworkList");
             table.innerHTML = "";
             data.homeworks.forEach((item) => {
-                generateTableCarrera(item, table);
+                generateTableHomework(item, table);
             });
         });
 }
