@@ -8,12 +8,28 @@
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <div class="flex-container">
-        <div>codigo</div>
-        <div>nombre del curso</div>
-        <div>horario</div>
-        <div>catedratico</div>
-        <div>seccion</div>
-    </div>
+    <div class="wrapper pad">
+        <div class="center">
+            <div>
+                <h1 class="title">mostrar usuario</h1>
+                <button onclick="cargarUsers()" >Usuarios</button>
+            </div>
+        </div>
+    </div> 
+        <br>
+        <div class="wrapper">
+            <div class="centerCenter">
+                <table id="users">
+                    <tr>
+                        <th>Id Usuario</th>
+                        <th>Carnet</th>
+                        <th>Correo</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                    </tr>
+                    <tbody id="UsersList"></tbody>
+                </table>
+            </div>
+        </div>
 </body>
 </html>
