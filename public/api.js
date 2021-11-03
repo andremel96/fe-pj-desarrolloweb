@@ -118,17 +118,19 @@ const cargarHomework = () => {
 
 const generateTableHomework = (e, table) => {
     let row = table.insertRow();
-    let name_homework = row.insertCell(0);
+    let id_homework = row.insertCell(0);
+    id_homework.innerHTML = e.id_homework;
+    let name_homework = row.insertCell(1);
     name_homework.innerHTML = e.name_homework;
-    let description_homework = row.insertCell(1);
+    let description_homework = row.insertCell(2);
     description_homework.innerHTML = e.description_homework;
-    let nota_homework = row.insertCell(2);
+    let nota_homework = row.insertCell(3);
     nota_homework.innerHTML = e.nota_homework;
-    let due_date = row.insertCell(3);
+    let due_date = row.insertCell(4);
     due_date.innerHTML = e.due_date;
-    let name_curso = row.insertCell(4);
+    let name_curso = row.insertCell(5);
     name_curso.innerHTML = e.name_curso;
-    let name_status = row.insertCell(5);
+    let name_status = row.insertCell(6);
     name_status.innerHTML = e.name_status;
     
 }
