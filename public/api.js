@@ -59,7 +59,7 @@ const cargarCurso = () => {
         });
 }
 
-const generateTable = (e, table) => {
+const generateTableCurso = (e, table) => {
     let row = table.insertRow();
     let idcurso = row.insertCell(0);
     idcurso.innerHTML = e.idcurso;
