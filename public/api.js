@@ -41,3 +41,31 @@ const generateTable = (e, table) => {
     let last_name = row.insertCell(4);
     last_name.innerHTML = e.last_name;
 }
+
+
+const cargarCurso = () => {
+    fetch(
+        user_list
+    )
+        .then((res) => res.json())
+        .then((data) => {
+            // main.innerHTML = "";
+            console.log(data);
+            const table = document.getElementById("CursoList");
+            table.innerHTML = "";
+            data.user.forEach((item) => {
+                generateTable(item, table);
+            });
+        });
+}
+
+const generateTable = (e, table) => {
+    let row = table.insertRow();
+    let idcurso = row.insertCell(0);
+    idcurso.innerHTML = e.idcurso;
+    let idcursoNumero = row.insertCell(1);
+    idcursoNumero.innerHTML = e.idcursoNumero;
+    let name_curso = row.insertCell(2);
+    name_curso.innerHTML = e.name_curso;
+    
+}
