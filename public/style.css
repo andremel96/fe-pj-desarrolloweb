@@ -65,3 +65,7 @@ body{
     margin-top:10px;
     margin-bottom:10px;
   }
+
+  .wrapper {
+    text-align: center;
+  }
