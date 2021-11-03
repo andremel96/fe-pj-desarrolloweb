@@ -90,11 +90,11 @@ const cargarCarrera = () => {
 
 const generateTableCarrera = (e, table) => {
     let row = table.insertRow();
-    let idcurso = row.insertCell(0);
-    idcurso.innerHTML = e.idcurso;
-    let idcursoNumero = row.insertCell(1);
-    idcursoNumero.innerHTML = e.idcursoNumero;
-    let name_curso = row.insertCell(2);
-    name_curso.innerHTML = e.name_curso;
+    let idCarrera = row.insertCell(0);
+    idCarrera.innerHTML = e.idCarrera;
+    let idcarreraNumero = row.insertCell(1);
+    idcarreraNumero.innerHTML = e.idcarreraNumero;
+    let name_carrera = row.insertCell(2);
+    name_carrera.innerHTML = e.name_carrera;
     
 }
