@@ -118,6 +118,7 @@ const cargarHomework = () => {
 
 const generateTableHomework = (e, table) => {
     let row = table.insertRow();
+    console.log(e);
     let id_homework = row.insertCell(0);
     id_homework.innerHTML = e.id_homework;
     let name_homework = row.insertCell(1);
