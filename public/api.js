@@ -83,7 +83,7 @@ const cargarCarrera = () => {
             const table = document.getElementById("CarreraList");
             table.innerHTML = "";
             data.carrera.forEach((item) => {
-                generateTableCurso(item, table);
+                generateTableCarrera(item, table);
             });
         });
 }
