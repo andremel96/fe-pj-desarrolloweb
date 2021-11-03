@@ -110,7 +110,7 @@ const cargarHomework = () => {
             console.log(data);
             const table = document.getElementById("HomeworkList");
             table.innerHTML = "";
-            data.homework.forEach((item) => {
+            data.homeworks.forEach((item) => {
                 generateTableCarrera(item, table);
             });
         });
