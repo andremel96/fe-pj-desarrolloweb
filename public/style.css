@@ -49,3 +49,19 @@ body{
   .pad{
     padding-top: 50px;
   }
+  .divBorder{
+    border-top: 1px solid;
+  }
+  .column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+  }
+  table, th, td {
+    border: 1px solid black;
+  }
+  
+  table{
+    margin-top:10px;
+    margin-bottom:10px;
+  }
