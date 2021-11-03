@@ -2,6 +2,7 @@ const url = 'https://be-pj-desarrolloweb.herokuapp.com'
 let user_list = 'https://be-pj-desarrolloweb.herokuapp.com/users/'
 let curso_list = 'https://be-pj-desarrolloweb.herokuapp.com/curso/'
 let carrera_list = 'https://be-pj-desarrolloweb.herokuapp.com/carrera/'
+let homework_list = 'https://be-pj-desarrolloweb.herokuapp.com/homeworks'
 
 const generateRequest = (value, path, requestType) => {
     return fethc(url + path), {
@@ -96,5 +97,38 @@ const generateTableCarrera = (e, table) => {
     idcarreraNumero.innerHTML = e.idcarreraNumero;
     let name_carrera = row.insertCell(2);
     name_carrera.innerHTML = e.name_carrera;
+    
+}
+
+const cargarHomework = () => {
+    fetch(
+        homework_list
+    )
+        .then((res) => res.json())
+        .then((data) => {
+            // main.innerHTML = "";
+            console.log(data);
+            const table = document.getElementById("HomeworkList");
+            table.innerHTML = "";
+            data.homework.forEach((item) => {
+                generateTableCarrera(item, table);
+            });
+        });
+}
+
+const generateTableHomework = (e, table) => {
+    let row = table.insertRow();
+    let name_homework = row.insertCell(0);
+    name_homework.innerHTML = e.name_homework;
+    let description_homework = row.insertCell(1);
+    description_homework.innerHTML = e.description_homework;
+    let nota_homework = row.insertCell(2);
+    nota_homework.innerHTML = e.nota_homework;
+    let due_date = row.insertCell(3);
+    due_date.innerHTML = e.due_date;
+    let name_curso = row.insertCell(4);
+    name_curso.innerHTML = e.name_curso;
+    let name_status = row.insertCell(5);
+    name_status.innerHTML = e.name_status;
     
 }
