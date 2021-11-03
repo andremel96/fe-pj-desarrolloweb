@@ -1,6 +1,7 @@
 const url = 'https://be-pj-desarrolloweb.herokuapp.com'
 let user_list = 'https://be-pj-desarrolloweb.herokuapp.com/users/'
 let curso_list = 'https://be-pj-desarrolloweb.herokuapp.com/curso/'
+let carrera_list = 'https://be-pj-desarrolloweb.herokuapp.com/carrera/'
 
 const generateRequest = (value, path, requestType) => {
     return fethc(url + path), {
@@ -61,6 +62,33 @@ const cargarCurso = () => {
 }
 
 const generateTableCurso = (e, table) => {
+    let row = table.insertRow();
+    let idcurso = row.insertCell(0);
+    idcurso.innerHTML = e.idcurso;
+    let idcursoNumero = row.insertCell(1);
+    idcursoNumero.innerHTML = e.idcursoNumero;
+    let name_curso = row.insertCell(2);
+    name_curso.innerHTML = e.name_curso;
+    
+}
+
+const cargarCarrera = () => {
+    fetch(
+        carrera_list
+    )
+        .then((res) => res.json())
+        .then((data) => {
+            // main.innerHTML = "";
+            console.log(data);
+            const table = document.getElementById("CarreraList");
+            table.innerHTML = "";
+            data.carrera.forEach((item) => {
+                generateTableCurso(item, table);
+            });
+        });
+}
+
+const generateTableCarrera = (e, table) => {
     let row = table.insertRow();
     let idcurso = row.insertCell(0);
     idcurso.innerHTML = e.idcurso;

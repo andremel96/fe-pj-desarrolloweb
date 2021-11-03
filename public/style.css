@@ -69,3 +69,10 @@ body{
   .wrapper {
     text-align: center;
   }
+
+  .title{
+    font-size: 50px;
+    background-color:black;
+    color: white;
+    font-weight: bold;
+  }
