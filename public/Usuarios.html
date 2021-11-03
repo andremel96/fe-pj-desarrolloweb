@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/style.css">
+    <title>Document</title>
+    <script src="/public/api.js"></script>
+</head>
+
+<body>
+    <div class="wrapper pad">
+        <div class="center">
+            <div>
+                <h1 class="title">mostrar usuario</h1>
+                <button name="getUsers" id="getUsers" onclick="generateTable()" >Usuarios</button>
+            </div>
+        </div>
+    </div> 
+        <br>
+        <div class="wrapper">
+            <div class="center">
+                <table id="users">
+                    <tr>
+                        <th>Id Usuario</th>
+                        <th>Carnet</th>
+                        <th>Correo</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                    </tr>
+                    <tbody id="UsersList"></tbody>
+                </table>
+            </div>
+        </div>
+
+</body>
+
+</html>
