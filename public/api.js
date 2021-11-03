@@ -107,7 +107,7 @@ const cargarHomework = () => {
         .then((res) => res.json())
         .then((data) => {
             // main.innerHTML = "";
-            console.log(data);
+            //console.log(data);
             const table = document.getElementById("HomeworkList");
             table.innerHTML = "";
             data.homeworks.forEach((item) => {
