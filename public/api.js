@@ -129,9 +129,10 @@ const generateTableHomework = (e, table) => {
     let due_date = row.insertCell(4);
     due_date.innerHTML = e.due_date;
     let name_curso = row.insertCell(5);
-    name_curso.innerHTML = e.name_curso;
+    name_curso.innerHTML = e.cursoconect_curso.name_curso;
     let name_status = row.insertCell(6);
-    name_status.innerHTML = e.name_status;
+    name_status.innerHTML = e.conect_status.name_status;
     console.log(e);
     
 }
+
