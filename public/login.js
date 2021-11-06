@@ -16,15 +16,15 @@ const login = () => {
         .then(function (response) {
             console.log(response);
             if(response.status==='success') {
-                window.location.href="/menu"
                 miStorage.setItem('AccessToken',response.accessToken)
+                window.location.href="/menu"
             }else{
                 alert('Ingrese bien esa su informacion')
             }
 
         })
         .catch(function (error) {
-            alert
+            alert("Ha ocurrido un error")
             console.log(error);
         });
 }
