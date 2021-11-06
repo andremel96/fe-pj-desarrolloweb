@@ -1,31 +1,38 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Animated Login Form | CodingNepal</title>
-    <link rel="stylesheet" href="login.css">
-  </head>
-  <body>
-    <div class="center">
-      <h1>Iniciar Sesion</h1>
-      <form method="post">
+
+<head>
+  <meta charset="utf-8">
+  <title>Animated Login Form | CodingNepal</title>
+  <link rel="stylesheet" href="login.css">
+  <script src="login.js"></script>
+</head>
+
+<body>
+
+  <div class="center">
+    <h1>Iniciar Sesion</h1>
+    <form id="formulario-login" name="formulario-login" method="get" action="/cursos" >
+      <fieldset>
         <div class="txt_field">
-          <input type="text" required>
+          <input name="username" type="text" required>
           <span></span>
           <label>Usuario</label>
         </div>
         <div class="txt_field">
-          <input type="password" required>
+          <input name="password" type="password" required>
           <span></span>
           <label>Contrasenia</label>
         </div>
         <div class="pass">Olvidaste la contrasenia?</div>
-        <input type="submit" value="Login">
+        <input type="button" onclick="login()" value="Login">
         <div class="signup_link">
           no recuerdo? <a href="#">Iniciar Sesion</a>
         </div>
-      </form>
-    </div>
+      </fieldset>
+    </form>
+  </div>
+  
+</body>
 
-  </body>
 </html>

@@ -1,8 +1,28 @@
-const url = 'https://be-pj-desarrolloweb.herokuapp.com'
+const url ='https://be-pj-desarrolloweb.herokuapp.com'; //'https://be-pj-desarrolloweb.herokuapp.com'
 let user_list = 'https://be-pj-desarrolloweb.herokuapp.com/users/'
-let curso_list = 'https://be-pj-desarrolloweb.herokuapp.com/curso/'
+let curso_list = 'http://localhost:3001/curso/'
 let carrera_list = 'https://be-pj-desarrolloweb.herokuapp.com/carrera/'
 let homework_list = 'https://be-pj-desarrolloweb.herokuapp.com/homeworks'
+
+const miStorage = window.localStorage;
+
+const validarLogin = () => {
+    let token = miStorage.getItem('AccessToken');
+    if (token) {
+        return token;
+    } else {
+        window.location.href = "/";
+    }
+}
+
+const validarStatusCode = (code,res) => {
+    let token = miStorage.getItem('AccessToken');
+    if (code===401) {
+        window.location.href = "/";
+    } else {
+        return res.json();
+    }
+}
 
 const generateRequest = (value, path, requestType) => {
     return fethc(url + path), {
@@ -19,7 +39,7 @@ const cargarUsers = () => {
     fetch(
         user_list
     )
-        .then((res) => res.json())
+        .then((res) =>res.json())
         .then((data) => {
             // main.innerHTML = "";
             console.log(data);
@@ -46,11 +66,18 @@ const generateTable = (e, table) => {
 }
 
 
+
 const cargarCurso = () => {
     fetch(
-        curso_list
+        curso_list,
+        {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' +validarLogin()
+            },
+        }
     )
-        .then((res) => res.json())
+        .then((res) => validarStatusCode(res.status,res))
         .then((data) => {
             // main.innerHTML = "";
             console.log(data);
@@ -70,7 +97,7 @@ const generateTableCurso = (e, table) => {
     idcursoNumero.innerHTML = e.idcursoNumero;
     let name_curso = row.insertCell(2);
     name_curso.innerHTML = e.name_curso;
-    
+
 }
 
 const cargarCarrera = () => {
@@ -97,7 +124,7 @@ const generateTableCarrera = (e, table) => {
     idcarreraNumero.innerHTML = e.idcarreraNumero;
     let name_carrera = row.insertCell(2);
     name_carrera.innerHTML = e.name_carrera;
-    
+
 }
 
 const cargarHomework = () => {
@@ -116,6 +143,7 @@ const cargarHomework = () => {
         });
 }
 
+
 const generateTableHomework = (e, table) => {
     let row = table.insertRow();
     let id_homework = row.insertCell(0);
@@ -133,6 +161,6 @@ const generateTableHomework = (e, table) => {
     let name_status = row.insertCell(6);
     name_status.innerHTML = e.conect_status.name_status;
     console.log(e);
-    
+
 }
 
