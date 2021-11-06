@@ -23,11 +23,13 @@ app.get('/cursos', function (req, res) {
 });
 
 app.get('/menu', function (req, res) {
-    res.sendFile('public/menu.html', { root: __dirname });
+    res.sendFile('public/MENU.HTML', { root: __dirname });
 });
+
 app.get('/notas', function (req, res) {
     res.sendFile('public/notas.html', { root: __dirname });
 });
+
 app.get('/actividades', function (req, res) {
     res.sendFile('public/actividades.html', { root: __dirname });
 });
