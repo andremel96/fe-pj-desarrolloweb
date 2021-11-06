@@ -16,7 +16,7 @@ const login = () => {
         .then(function (response) {
             console.log(response);
             if(response.status==='success') {
-                window.location.href="/cursos"
+                window.location.href="/menu"
                 miStorage.setItem('AccessToken',response.accessToken)
             }else{
                 alert('Ingrese bien esa su mierda')
