@@ -19,7 +19,7 @@ const login = () => {
                 window.location.href="/menu"
                 miStorage.setItem('AccessToken',response.accessToken)
             }else{
-                alert('Ingrese bien esa su mierda')
+                alert('Ingrese bien esa su informacion')
             }
 
         })
